@@ -553,19 +553,23 @@ footer {
   .nav-menu.responsive {
     left: 0;
   }
-  .nav-menu {
-    position: fixed;
-    top: 80px;
-    left: -100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(20px);
-    width: 100%;
-    min-height: 450px;
-    height: 90vh;
-    transition: 0.3s;
+
+  @supports (backdrop-filter: none) {
+    .nav-menu {
+      position: fixed;
+      top: 80px;
+      left: -100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(20px);
+      -moz-backdrop-filter: blur(20px);
+      width: 100%;
+      min-height: 450px;
+      height: 90vh;
+      transition: 0.3s;
+    }
   }
   .nav_menu_list {
     flex-direction: column;
